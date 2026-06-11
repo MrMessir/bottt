@@ -74,7 +74,11 @@ async function apiGet(path) {
     headers: getAuthHeaders(),
   });
   if (!response.ok) {
-    throw new Error(await response.text());
+    const text = await response.text();
+    if (response.status === 404 && text.includes("GitHub Pages")) {
+      throw new Error("API бота не настроен. Укажите api-base в index.html");
+    }
+    throw new Error(text.slice(0, 120) || `HTTP ${response.status}`);
   }
   return response.json();
 }
