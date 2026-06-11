@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="api-base" content="" />
+  <title>StudBot Mini App</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+  <div class="background-blur"></div>
+  <main class="app-shell glass">
+    <header class="topbar">
+      <div>
+        <h1>StudBot</h1>
+        <p id="profileLine">Синхронизация профиля...</p>
+      </div>
+      <button id="notifyBtn" class="icon-btn" title="Переключить уведомления">🔔</button>
+    </header>
+    <div id="pullIndicator" class="pull-indicator">Обновление...</div>
+
+    <nav class="tabs glass-soft">
+      <button data-tab="profile" class="active">Профиль</button>
+      <button data-tab="grades">Журнал</button>
+      <button data-tab="attendance">Посещаемость</button>
+      <button data-tab="homework">ДЗ</button>
+      <button data-tab="schedule">Расписание</button>
+      <button data-tab="rating">Рейтинг</button>
+      <button data-tab="manage">Управление</button>
+    </nav>
+
+    <section id="content" class="content"></section>
+
+    <nav class="bottom-nav glass-soft" id="bottomNav">
+      <button data-tab="profile" class="active">👤</button>
+      <button data-tab="grades">📚</button>
+      <button data-tab="attendance">📊</button>
+      <button data-tab="homework">📝</button>
+      <button data-tab="schedule">📅</button>
+      <button data-tab="rating">🏆</button>
+      <button data-tab="manage">⚙️</button>
+    </nav>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
